@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { 
-  FileText, Video, Music, Image as ImageIcon, 
+import {
+  FileText, Video, Music, Image as ImageIcon,
   Download, ExternalLink, BookOpen, FileCheck, Link as LinkIcon
 } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
@@ -20,42 +20,51 @@ function cn(...inputs: ClassValue[]) {
 // 1. HERO SECTION
 const Hero = () => (
   <section className="flex flex-col items-center justify-center pt-32 pb-20 px-4">
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-indigo-300 mb-6"
     >
-      <BookOpen size={14} /> Materiais do NotebookLM
+      <BookOpen size={14} /> Guia Prático NotebookLM
     </motion.div>
 
-    <motion.h1 
+    <motion.h1
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.1 }}
       className="text-5xl md:text-8xl font-bold tracking-tighter text-center bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent"
     >
-      Seus Artefatos <br /> Organizados
+      5W2H <br /> Do Planejamento <br /> à Execução
     </motion.h1>
 
-    <motion.p 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.2 }}
-      className="mt-6 text-gray-400 text-lg max-w-2xl text-center leading-relaxed"
+      className="mt-6 text-gray-400 text-lg max-w-3xl text-center leading-relaxed space-y-3"
     >
-      Explore todos os materiais e artefatos gerados pelo NotebookLM. 
-      Organize, compartilhe e acesse seus estudos de forma elegante.
-    </motion.p>
+      <p>
+        Transforme suas ideias em ações concretas com a metodologia 5W2H.
+        Este guia prático explora ferramentas estruturadas de gestão e planejamento estratégico.
+      </p>
+      <p>
+        Aprenda a diferença entre o <strong className="text-indigo-400">5 Porquês</strong>, focado em investigar causas raiz,
+        e o <strong className="text-cyan-400">5W2H</strong>, utilizado para elaborar planos de ação detalhados.
+      </p>
+      <p>
+        Descubra como integrar essas ferramentas para transformar diagnósticos precisos em execuções estratégicas bem-sucedidas.
+      </p>
+    </motion.div>
   </section>
 );
 
 // 2. MATERIALS SECTION
-const MaterialCard = ({ 
-  title, 
-  description, 
-  type, 
-  file, 
-  icon, 
+const MaterialCard = ({
+  title,
+  description,
+  type,
+  file,
+  icon,
   delay,
   notebookUrl,
   tags
@@ -92,7 +101,7 @@ const MaterialCard = ({
       className="group relative rounded-3xl bg-white/[0.02] border border-white/10 p-6 hover:border-indigo-500/50 transition-all duration-300 overflow-hidden"
     >
       <div className={`absolute inset-0 bg-gradient-to-br ${getTypeColor()} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-      
+
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-4">
           <div className="p-3 rounded-xl bg-indigo-500/10 text-indigo-400">
@@ -113,10 +122,10 @@ const MaterialCard = ({
             <ExternalLink size={18} className="text-gray-400" />
           </a>
         </div>
-        
+
         <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
         <p className="text-gray-400 text-sm leading-relaxed mb-4">{description}</p>
-        
+
         {tags && tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4">
             {tags.slice(0, 3).map((tag, idx) => (
@@ -129,7 +138,7 @@ const MaterialCard = ({
             ))}
           </div>
         )}
-        
+
         <div className="flex flex-wrap gap-2">
           <a
             href={`/${file}`}
@@ -220,7 +229,7 @@ const MaterialsSection = () => {
           Materiais Disponíveis
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-          Todos os artefatos gerados pelo NotebookLM organizados por categoria
+          Explore guias práticos, infográficos, vídeos e áudios sobre metodologias 5W2H e 5 Porquês
         </p>
       </motion.div>
 
@@ -297,7 +306,7 @@ const MediaPreview = () => {
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Video Players */}
         {videos.map((video, index) => (
           <motion.div
@@ -358,7 +367,7 @@ const MediaPreview = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: (videos.length + audios.length + index) * 0.1 }}
-            className="lg:col-span-2 rounded-3xl bg-white/[0.02] border border-white/10 p-6"
+            className="lg:col-span-3 rounded-3xl bg-white/[0.02] border border-white/10 p-6"
           >
             <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
               <ImageIcon size={24} className="text-blue-400" />
@@ -385,12 +394,33 @@ const Footer = () => (
   <footer className="border-t border-white/10 pt-20 pb-10 px-4">
     <div className="max-w-7xl mx-auto text-center">
       <h3 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent mb-4">
-        Artefatos do NotebookLM
+        📋5W2H: Guia Prático
       </h3>
       <p className="text-gray-400 mb-6 text-sm">
-        Organize e compartilhe seus estudos do NotebookLM
+        Transforme suas ideias em ações concretas com metodologias de planejamento estratégico
       </p>
-      <p className="text-gray-500 text-xs">
+      <p className="text-gray-500 text-xs mb-4">
+        Materiais gerados pelo <a href="https://notebooklm.google.com/notebook/b7c32ecc-f087-4cfc-899f-123715afc7e5" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300">Google NotebookLM</a>
+      </p>
+      <div className="border-t border-white/5 pt-6 mt-6">
+        <p className="text-gray-500 text-xs mb-2">
+          Baseado no template{" "}
+          <a href="https://github.com/araguaci/notebooklm-showcase" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300">
+            notebooklm-showcase
+          </a>
+        </p>
+        <p className="text-gray-500 text-xs">
+          Criado por{" "}
+          <a href="https://github.com/araguaci" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-300">
+            @araguaci
+          </a>
+          {" "}by{" "}
+          <a href="https://artesdosul.com/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300">
+            @artesdosul
+          </a>
+        </p>
+      </div>
+      <p className="text-gray-500 text-xs mt-4">
         © {new Date().getFullYear()} - Template open source para a comunidade
       </p>
     </div>

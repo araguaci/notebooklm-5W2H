@@ -1,5 +1,102 @@
 {
-  "materials": [],
-  "notebooks": []
+  "materials": [
+    {
+      "id": "guia-pratico-5w2h",
+      "title": "Guia Prático 5W2H: Transforme Suas Ideias em Ações Concretas",
+      "description": "Guia completo que ensina passo a passo como aplicar a metodologia 5W2H para transformar metas em tarefas práticas e organizadas. Inclui explicação das 7 perguntas-chave, dicas de ouro e erros a evitar.",
+      "type": "document",
+      "file": "guia-pratico-5-w2-h-transforme-suas-ideias-em-acoes-concretas.md",
+      "category": "documentos",
+      "notebookUrl": "https://notebooklm.google.com/notebook/b7c32ecc-f087-4cfc-899f-123715afc7e5",
+      "tags": ["5W2H", "Planejamento", "Guia Prático", "Metodologia"]
+    },
+    {
+      "id": "do-porque-ao-como",
+      "title": "Do Porquê ao Como: Análise Comparativa",
+      "description": "Documento que explora as diferenças entre o 5 Porquês e o 5W2H, demonstrando como cada ferramenta se aplica em diferentes contextos de gestão e planejamento estratégico.",
+      "type": "document",
+      "file": "do-porque-ao-como.pdf",
+      "category": "documentos",
+      "notebookUrl": "https://notebooklm.google.com/notebook/b7c32ecc-f087-4cfc-899f-123715afc7e5",
+      "tags": ["5 Porquês", "5W2H", "Análise Comparativa", "Gestão"]
+    },
+    {
+      "id": "video-da-ideia-a-acao",
+      "title": "Da Ideia à Ação: 5W2H em Prática",
+      "description": "Vídeo explicativo que demonstra como aplicar a metodologia 5W2H para transformar ideias em planos de ação concretos e executáveis.",
+      "type": "video",
+      "file": "da-ideia-a-acao-5w2h.mp4",
+      "category": "videos",
+      "notebookUrl": "https://notebooklm.google.com/notebook/b7c32ecc-f087-4cfc-899f-123715afc7e5",
+      "tags": ["5W2H", "Vídeo", "Tutorial", "Execução"]
+    },
+    {
+      "id": "audio-duas-ferramentas-essenciais",
+      "title": "5 Porquês e 5W2H: Duas Ferramentas Essenciais",
+      "description": "Resumo em áudio explicando como o 5 Porquês e o 5W2H trabalham juntos como ferramentas complementares na gestão e resolução de problemas.",
+      "type": "audio",
+      "file": "5-porques-e-5w2h-duas-ferramentas-essenciais.m4a",
+      "category": "audios",
+      "notebookUrl": "https://notebooklm.google.com/notebook/b7c32ecc-f087-4cfc-899f-123715afc7e5",
+      "tags": ["5 Porquês", "5W2H", "Áudio", "Ferramentas"]
+    },
+    {
+      "id": "audio-dupla-de-gestao",
+      "title": "5 Porquês e 5W2H: Dupla de Gestão",
+      "description": "Áudio que explora como essas duas metodologias formam uma dupla poderosa para diagnóstico e planejamento estratégico em organizações.",
+      "type": "audio",
+      "file": "5-porques-e-5w2h-dupla-de-gestao.m4a",
+      "category": "audios",
+      "notebookUrl": "https://notebooklm.google.com/notebook/b7c32ecc-f087-4cfc-899f-123715afc7e5",
+      "tags": ["5 Porquês", "5W2H", "Áudio", "Gestão"]
+    },
+    {
+      "id": "infografico-detalhados",
+      "title": "5 Porquês e 5W2H Detalhados",
+      "description": "Infográfico visual que detalha as características, diferenças e aplicações práticas das metodologias 5 Porquês e 5W2H.",
+      "type": "image",
+      "file": "5-porques-e-5w2h-detalhados.png",
+      "category": "imagens",
+      "notebookUrl": "https://notebooklm.google.com/notebook/b7c32ecc-f087-4cfc-899f-123715afc7e5",
+      "tags": ["5 Porquês", "5W2H", "Infográfico", "Visual"]
+    },
+    {
+      "id": "infografico-estrategicos",
+      "title": "5 Porquês e 5W2H Estratégicos",
+      "description": "Infográfico focado na aplicação estratégica das ferramentas 5 Porquês e 5W2H no contexto de planejamento organizacional.",
+      "type": "image",
+      "file": "5-porques-e-5w2h-estrategicos.png",
+      "category": "imagens",
+      "notebookUrl": "https://notebooklm.google.com/notebook/b7c32ecc-f087-4cfc-899f-123715afc7e5",
+      "tags": ["5 Porquês", "5W2H", "Infográfico", "Estratégia"]
+    },
+    {
+      "id": "infografico-solucao-problemas",
+      "title": "5 Porquês e 5W2H: Solução de Problemas",
+      "description": "Infográfico que ilustra como utilizar o 5 Porquês para identificar causas raiz e o 5W2H para criar planos de ação efetivos.",
+      "type": "image",
+      "file": "5-porques-e-5w2h-solucao-de-problemas.png",
+      "category": "imagens",
+      "notebookUrl": "https://notebooklm.google.com/notebook/b7c32ecc-f087-4cfc-899f-123715afc7e5",
+      "tags": ["5 Porquês", "5W2H", "Infográfico", "Resolução de Problemas"]
+    },
+    {
+      "id": "mapa-mental-5w2h",
+      "title": "Mapa Mental: Metodologia 5W2H",
+      "description": "Mapa mental visual que organiza de forma estruturada todos os conceitos, perguntas-chave e aplicações práticas da metodologia 5W2H.",
+      "type": "image",
+      "file": "mind-map.png",
+      "category": "imagens",
+      "notebookUrl": "https://notebooklm.google.com/notebook/b7c32ecc-f087-4cfc-899f-123715afc7e5",
+      "tags": ["5W2H", "Mapa Mental", "Visualização", "Estrutura"]
+    }
+  ],
+  "notebooks": [
+    {
+      "id": "b7c32ecc-f087-4cfc-899f-123715afc7e5",
+      "url": "https://notebooklm.google.com/notebook/b7c32ecc-f087-4cfc-899f-123715afc7e5",
+      "title": "📋5W2H: Guia Prático para Planejamento e Execução de Planos de Ação",
+      "description": "As fontes exploram metodologias de gestão e planejamento estratégico, destacando como ferramentas estruturadas auxiliam na resolução de problemas e na eficiência operacional. Os textos esclarecem as diferenças entre o 5 Porquês, focado em investigar a causa raiz de falhas, e o 5W2H, utilizado para elaborar planos de ação detalhados. Estudos de caso práticos demonstram a aplicação dessas técnicas na área da saúde para padronizar processos e na indústria portuguesa através do sistema Lean Six Sigma. Além disso, discute-se a importância de adaptar esses modelos para a realidade de micro e pequenas empresas, garantindo sua sobrevivência no mercado. A integração dessas ferramentas é apresentada como o caminho ideal para transformar diagnósticos precisos em execuções estratégicas bem-sucedidas."
+    }
+  ]
 }
-
