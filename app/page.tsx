@@ -60,7 +60,99 @@ const Hero = () => (
   </section>
 );
 
-// 2. MATERIALS SECTION
+// 2. SOBRE A ANÁLISE 5W2H SECTION
+const About5W2HSection = () => {
+  const cards = [
+    {
+      title: "O Que é a Ferramenta 5W2H?",
+      description: "Metodologia de planejamento e execução que funciona como um checklist detalhado de atividades, prazos e responsabilidades. Surgiu no Japão na década de 1950, desenvolvida por Taiichi Ohno e Eiji Toyoda no contexto do sistema de produção da Toyota.",
+      icon: "📋"
+    },
+    {
+      title: "As 7 Perguntas-Chave",
+      description: "O método se baseia em responder sete perguntas essenciais: O quê? (What), Por quê? (Why), Quem? (Who), Onde? (Where), Quando? (When), Como? (How) e Quanto custará? (How much). Juntas, eliminam ambiguidades e criam um mapa claro para a ação.",
+      icon: "❓"
+    },
+    {
+      title: "Como Aplicar o 5W2H",
+      description: "Processo em 4 passos: 1) Reunir a equipe e definir o objetivo, 2) Preencher a planilha respondendo às 7 perguntas, 3) Escolher a ferramenta (papel, planilha digital ou app), 4) Acompanhar, revisar e atualizar constantemente.",
+      icon: "🚀"
+    },
+    {
+      title: "Dicas de Ouro",
+      description: "Seja específico e concreto, atribua responsabilidades individuais e defina prazos e custos realistas. Evite criar o plano sozinho, não acompanhar a execução e não revisar periodicamente. A disciplina na aplicação é fundamental.",
+      icon: "💡"
+    },
+    {
+      title: "5 Vantagens Principais",
+      description: "1) Clareza e Foco, 2) Organização e Delegação, 3) Aumento da Eficiência, 4) Melhora na Tomada de Decisão, 5) Simplicidade e Versatilidade. A ferramenta se adapta a empresas de todos os portes e qualquer tipo de desafio.",
+      icon: "⭐"
+    },
+    {
+      title: "Origem e História",
+      description: "Desenvolvida no contexto do toyotismo, o 5W2H foi criado para elevar a qualidade no processo de produção e evitar desperdícios. Continua sendo um pilar da gestão eficiente até hoje, transformando estratégias em ações práticas.",
+      icon: "📚"
+    }
+  ];
+
+  const conclusion = {
+    title: "Conclusão: Transforme o Planejamento em Resultado",
+    description: "O 5W2H é mais do que uma simples lista de tarefas; é uma ferramenta acessível e altamente eficaz que serve como a ponte entre a ideia e a ação efetiva. Ele oferece a estrutura necessária para transformar qualquer objetivo em um plano claro e executável. Lembre-se: um bom plano não é aquele que fica no papel, mas sim aquele que é executado com disciplina e ajustado com inteligência."
+  };
+
+  return (
+    <section className="max-w-7xl mx-auto px-4 py-24">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+          Sobre a Análise 5W2H
+        </h2>
+        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          Conheça os fundamentos, aplicação e benefícios desta poderosa ferramenta de planejamento estratégico
+        </p>
+      </motion.div>
+
+      {/* 6 Cards em Grid 3x2 */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        {cards.map((card, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            className="rounded-3xl bg-white/[0.02] border border-white/10 p-6 hover:border-indigo-500/50 transition-all duration-300"
+          >
+            <div className="text-4xl mb-4">{card.icon}</div>
+            <h3 className="text-xl font-bold text-white mb-3">{card.title}</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">{card.description}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Card de Conclusão - Largura Total */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.6 }}
+        className="rounded-3xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 border border-indigo-500/20 p-8"
+      >
+        <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+          <span className="text-3xl">✨</span>
+          {conclusion.title}
+        </h3>
+        <p className="text-gray-300 text-base leading-relaxed">{conclusion.description}</p>
+      </motion.div>
+    </section>
+  );
+};
+
+// 3. MATERIALS SECTION
 const MaterialCard = ({
   title,
   description,
@@ -271,7 +363,7 @@ const MaterialsSection = () => {
   );
 };
 
-// 3. MEDIA PREVIEW SECTION
+// 4. MEDIA PREVIEW SECTION
 const MediaPreview = () => {
   const [materials, setMaterials] = useState<Material[]>([]);
   const [loading, setLoading] = useState(true);
@@ -391,7 +483,7 @@ const MediaPreview = () => {
   );
 };
 
-// 4. SHARE SECTION
+// 5. SHARE SECTION
 const ShareSection = () => {
   const [copied, setCopied] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -551,7 +643,7 @@ const ShareSection = () => {
   );
 };
 
-// 5. FOOTER
+// 6. FOOTER
 const Footer = () => (
   <footer className="border-t border-white/10 pt-20 pb-10 px-4">
     <div className="max-w-7xl mx-auto text-center">
@@ -601,6 +693,7 @@ export default function Page() {
 
       <div className="relative z-10">
         <Hero />
+        <About5W2HSection />
         <MaterialsSection />
         <MediaPreview />
         <ShareSection />
