@@ -4,7 +4,9 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   FileText, Video, Music, Image as ImageIcon,
-  Download, ExternalLink, BookOpen, FileCheck, Link as LinkIcon
+  Download, ExternalLink, BookOpen, FileCheck, Link as LinkIcon, Notebook,
+  Target, TrendingUp, Shield, AlertTriangle, Zap, Globe, Github, Heart,
+  Share2, Facebook, Twitter, Linkedin, MessageCircle, Copy, Check
 } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -389,7 +391,167 @@ const MediaPreview = () => {
   );
 };
 
-// 4. FOOTER
+// 4. SHARE SECTION
+const ShareSection = () => {
+  const [copied, setCopied] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [currentUrl, setCurrentUrl] = useState("");
+
+  useEffect(() => {
+    setMounted(true);
+    if (typeof window !== "undefined") {
+      setCurrentUrl(window.location.href);
+    }
+  }, []);
+
+  const shareTitle = "🛰️ 5W2H: Transforme suas ideias em ações concretas com metodologias de planejamento estratégico";
+  const shareText = "Explore todos os materiais e artefatos gerados pelo Google NotebookLM sobre Análise 5W2Hs.";
+
+  const getShareUrl = (url: string) => {
+    if (!mounted || !url) {
+      return "#";
+    }
+    return url;
+  };
+
+  const handleCopyLink = async () => {
+    if (!mounted || !currentUrl) return;
+    try {
+      await navigator.clipboard.writeText(currentUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Erro ao copiar:", err);
+    }
+  };
+
+  const handleShare = async () => {
+    if (!mounted || !currentUrl || typeof navigator === "undefined" || !navigator.share) return;
+    try {
+      await navigator.share({
+        title: shareTitle,
+        text: shareText,
+        url: currentUrl,
+      });
+    } catch (err) {
+      console.log("Compartilhamento cancelado");
+    }
+  };
+
+  const shareLinks = [
+    {
+      name: "Facebook",
+      icon: Facebook,
+      color: "hover:text-blue-500",
+      bgColor: "hover:bg-blue-500/10",
+      getHref: () => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl || "")}`,
+    },
+    {
+      name: "Twitter",
+      icon: Twitter,
+      color: "hover:text-cyan-400",
+      bgColor: "hover:bg-cyan-500/10",
+      getHref: () => `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareTitle)}&url=${encodeURIComponent(currentUrl || "")}`,
+    },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      color: "hover:text-blue-400",
+      bgColor: "hover:bg-blue-500/10",
+      getHref: () => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl || "")}`,
+    },
+    {
+      name: "WhatsApp",
+      icon: MessageCircle,
+      color: "hover:text-green-400",
+      bgColor: "hover:bg-green-500/10",
+      getHref: () => `https://wa.me/?text=${encodeURIComponent(shareTitle + " " + (currentUrl || ""))}`,
+    },
+  ];
+
+  return (
+    <section className="max-w-7xl mx-auto px-4 py-16">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mb-12"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+          Compartilhe este Conteúdo
+        </h2>
+        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          Ajude outros a descobrirem este recurso sobre Análise 5W2H
+        </p>
+      </motion.div>
+
+      <div className="flex flex-wrap justify-center gap-4 mb-8">
+        {shareLinks.map((link, index) => {
+          const Icon = link.icon;
+          return (
+            <motion.a
+              key={link.name}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              href={mounted ? link.getHref() : "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                if (!mounted) {
+                  e.preventDefault();
+                }
+              }}
+              className={`flex items-center gap-2 px-6 py-3 rounded-xl bg-white/[0.02] border border-white/10 ${link.color} ${link.bgColor} transition-all duration-300 hover:border-current`}
+            >
+              <Icon size={20} />
+              <span className="font-medium">{link.name}</span>
+            </motion.a>
+          );
+        })}
+
+        {mounted && typeof navigator !== "undefined" && navigator.share && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: shareLinks.length * 0.1 }}
+            onClick={handleShare}
+            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white/[0.02] border border-white/10 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all duration-300 hover:border-indigo-500/50"
+          >
+            <Share2 size={20} />
+            <span className="font-medium">Compartilhar</span>
+          </motion.button>
+        )}
+
+        <motion.button
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: (shareLinks.length + 1) * 0.1 }}
+          onClick={handleCopyLink}
+          disabled={!mounted}
+          className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white/[0.02] border border-white/10 hover:text-indigo-400 hover:bg-indigo-500/10 transition-all duration-300 hover:border-indigo-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {copied ? (
+            <>
+              <Check size={20} />
+              <span className="font-medium">Copiado!</span>
+            </>
+          ) : (
+            <>
+              <Copy size={20} />
+              <span className="font-medium">Copiar Link</span>
+            </>
+          )}
+        </motion.button>
+      </div>
+    </section>
+  );
+};
+
+// 5. FOOTER
 const Footer = () => (
   <footer className="border-t border-white/10 pt-20 pb-10 px-4">
     <div className="max-w-7xl mx-auto text-center">
@@ -441,6 +603,7 @@ export default function Page() {
         <Hero />
         <MaterialsSection />
         <MediaPreview />
+        <ShareSection />
         <Footer />
       </div>
     </div>
