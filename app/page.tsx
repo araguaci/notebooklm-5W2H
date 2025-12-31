@@ -404,7 +404,7 @@ const ShareSection = () => {
     }
   }, []);
 
-  const shareTitle = "🛰️ 5W2H: Transforme suas ideias em ações concretas com metodologias de planejamento estratégico";
+  const shareTitle = "📋 5W2H: Transforme suas ideias em ações concretas com metodologias de planejamento estratégico";
   const shareText = "Explore todos os materiais e artefatos gerados pelo Google NotebookLM sobre Análise 5W2Hs.";
 
   const getShareUrl = (url: string) => {
