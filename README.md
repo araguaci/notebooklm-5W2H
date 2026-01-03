@@ -14,6 +14,7 @@
 - 🎨 **Interface Moderna**: Design dark mode elegante com animações suaves
 - 📦 **Gerenciamento Dinâmico**: Catálogo centralizado em JSON
 - 🎯 **Múltiplos Formatos**: Suporte para documentos, vídeos, áudios e imagens
+- 📄 **Visualização de Markdown**: Documentos Markdown renderizados como páginas web formatadas
 - 🚀 **Fácil de Usar**: Script interativo para adicionar materiais
 - 📱 **Totalmente Responsivo**: Funciona perfeitamente em todos os dispositivos
 - ⚡ **Performance**: Construído com Next.js 14 e otimizações modernas
@@ -34,6 +35,13 @@ Para uma adaptação rápida, consulte o guia de início rápido:
 Para instruções detalhadas passo a passo:
 
 - [📘 GUIA_ADAPTACAO_TEMPLATE.md](./GUIA_ADAPTACAO_TEMPLATE.md) - Guia completo de adaptação
+
+### 📄 Visualização de Markdown
+
+Para adicionar visualização formatada de documentos Markdown:
+
+- [⚡ QUICK_START_MARKDOWN.md](./QUICK_START_MARKDOWN.md) - Guia rápido (5 minutos)
+- [📘 GUIA_VISUALIZACAO_MARKDOWN.md](./GUIA_VISUALIZACAO_MARKDOWN.md) - Guia completo
 
 ### 🎯 Passos Essenciais
 
@@ -130,6 +138,11 @@ O script irá perguntar todas as informações necessárias e adicionar automati
 
 - [📘 GUIA_ADICIONAR_MATERIAIS.md](./GUIA_ADICIONAR_MATERIAIS.md) - Guia completo passo a passo
 - [📋 README_MATERIAIS.md](./README_MATERIAIS.md) - Visão geral do sistema
+
+### Para Visualização de Markdown
+
+- [⚡ QUICK_START_MARKDOWN.md](./QUICK_START_MARKDOWN.md) - Guia rápido de implementação (5 min)
+- [📘 GUIA_VISUALIZACAO_MARKDOWN.md](./GUIA_VISUALIZACAO_MARKDOWN.md) - Guia completo com exemplos
 
 ## 🌟 Exemplos de Uso
 
